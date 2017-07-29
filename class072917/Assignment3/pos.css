@@ -1,0 +1,8 @@
+.fixedBox {
+	position: fixed;
+	background: red;
+	font-size: 75px;
+	height: 250px;
+	text-align: center;
+	line-height: 250px;
+}
