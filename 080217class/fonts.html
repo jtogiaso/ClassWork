@@ -1,6 +1,7 @@
 <html>
 	
 	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -19,11 +20,41 @@
 				font-size: 1.5em;
 				font-weight: lighter;
 			}
+			button {
+				background: #0000ff;
+				border: none;
+				color: #ffffff;
+			}
+			button:hover {
+				background: red;
+			}
+			button:active {
+				background: green;
+			}
+			ul li:nth-child(3) p{
+				color: red;
+			}
+			:target {
+				border: 5px solid turquoise;
+				background-color: purple;
+			}
 		</style>
 
 	</head>
 	
 	<body>
+		<button class="btn btn-danger btn-lg">Big Button</button>
+
+		<ul>
+			<li><p>First</p>Next</li>
+			<li><p>Foo</p>How</li>
+			<li><p>Bar</p>You</li>
+			<li><p>Baz</p>Doing</li>
+			<li><p>dslfjkbklnag;k</p>?</li>
+			<li><p>Last</p>JK</li>
+		</ul>
+
+
 		<h1>Header</h1>
 		<h1 class="rob">Header Two</h1>
 		<p class="rob">With Rob</p>
@@ -51,6 +82,14 @@
 				</div>
 			</div>
 		</div>
+		<p><a href="#this">Highlight This</a></p>
+		<p><a href="#that">Highlight That</a></p>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<p id="this"> This one</p>
+		<p id="that"> That one</p>
 	</body>
 
 </html>
