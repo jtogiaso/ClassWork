@@ -1,0 +1,11 @@
+body {
+    margin: 0; /* If not already reset */
+}
+
+.content {
+    min-height: calc(100vh - 20px);
+}
+
+footer {
+    height: 20px;
+}
