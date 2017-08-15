@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+  </head>
+  <body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script>
+
+      // // Array of zoo animals.
+      // var zooAnimals = ["Zebra", "Rhino", "Giraffe", "Owl"];
+
+      // // Rewrite the following code to print all of the animals using a for-loop.
+      // // console.log(zooAnimals[0]);
+      // // console.log(zooAnimals[1]);
+      // // console.log(zooAnimals[2]);
+      // // console.log(zooAnimals[3]);
+
+      // for (var iterator = zooAnimals.length-1;iterator >= 0; iterator--) {
+      //   console.log(zooAnimals[iterator]);
+      // }
+      var fizzBuzz = prompt("Please enter a number.");
+      fizzBuzz = parseInt(fizzBuzz);
+
+      for (var b = 0; b <= fizzBuzz; b++) {
+        console.log(
+          (0==b%2
+            ? "Fizz" + (0==b%3 ? "Buzz" : "")
+            : (0==b%3 ? "Buzz" : b)));4
+        
+        if (b%2==0 && b%3==0) {
+          console.log("fizz buzz");
+        }
+        else if (b%2==0) {
+          console.log("fizz");
+        }
+        else if (b%3==0) {
+          console.log("buzz");
+        }
+        else {
+          console.log(b)
+        }
+      }
+
+    </script>
+    
+  </body>
+</html>
