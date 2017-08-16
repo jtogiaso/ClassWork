@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <title>Trigger Clicked</title>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
   <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -12,10 +15,10 @@
 
 <body>
 
-  <h1>Click to Eat Sandwich</h1>
-  <h3 id="pbj">Peanut Butter Jelly</h3>
-  <h3 id="grilledcheese">Grilled Cheese</h3>
-  <h3 id="roastbeef">Roast Beef</h3>
+  <h1 class="jumbotron">Click a button below to Eat Sandwich</h1>
+  <button id="pbj">Peanut Butter Jelly</button>
+  <button id="grilledcheese">Grilled Cheese</button>
+  <button id="roastbeef">Roast Beef</button>
 
   <script type="text/javascript">
 
@@ -29,8 +32,11 @@
       // ====================================================================
       // Here we create variables for tracking the number of sandwiches eaten
       // ...
-
-
+      
+      var pbjSandwichesEaten = 0;
+      var grilledCheeseSandwichesEaten = 0;
+      var roastBeefSandwichesEaten = 0;
+      var sandwichesEaten = 0;
       // ...
 
       // FUNCTIONS
@@ -40,12 +46,39 @@
       // ...
 
 
+      $("#pbj").on("click" , function(){
+          pbjSandwichesEaten = eatASandwich(pbjSandwichesEaten , "You have eaten a PBJ. You have eaten " + (pbjSandwichesEaten+1) + " pbjs!")
+      });
+      $("#grilledcheese").on("click" , function(){
+          grilledCheeseSandwichesEaten = eatASandwich(grilledCheeseSandwichesEaten , "You have eaten a grilled cheese. You have eaten " + (grilledCheeseSandwichesEaten+1) + " grilled cheeses!")
+      });
+      $("#roastbeef").on("click" , function(){
+          roastBeefSandwichesEaten = eatASandwich(roastBeefSandwichesEaten , "You have eaten a roast beef sandwich. You have eaten " + (roastBeefSandwichesEaten+1) + " roast beef sandwiches!")
+      });
+      
+      $("button").on("click" , function() {
+        sandwichesEaten = pbjSandwichesEaten + grilledCheeseSandwichesEaten + roastBeefSandwichesEaten;
+        alert("Number of sandwiches eaten: " + sandwichesEaten
+              + "\n Number of pbjs eaten: " + pbjSandwichesEaten
+              + "\n Number of grilledcheeses eaten: " + grilledCheeseSandwichesEaten
+              + "\n Number of roastbeefs eaten: " + roastBeefSandwichesEaten
+          );
+      });
+
+      var eatASandwich = function(someSandwich, message) {
+        console.log(someSandwich);
+        someSandwich++;
+        console.log(someSandwich);
+        alert(message);
+        return someSandwich;
+      }
       // ...
+
 
     });
 
-</script>
+  </script>
 
-</body>
+  </body>
 
 </html>
