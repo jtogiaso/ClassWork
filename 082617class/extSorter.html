@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Extension Sorter</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+ 
+
+
+      var files = [
+        "pavans_first_birthday.mov",
+        "owens_asleep_at_the_computer.jpg",
+        "michael_fights_a_polar_bear.mp4",
+        "nate_road_rage.avi",
+        "ruby_skydiving.jpeg",
+        "ken_getting_his_black_belt.png",
+        "dan_winning_underground_street_race.mov",
+        "its_hard_to_come_up_with_file_names.gif",
+        "seriously_this_is_taking_too_long.mpg",
+        "i_wonder_how_many_of_these_i_should_have.png",
+        "oiuytghjkiuy",
+        "this_is_neither_here_nor_there",
+        "probably_a_few_more.avi",
+        "nutmeg_is_clawing_my_sneakers_again.mp4",
+        "cat_i_will_destroy_you.gif",
+        "i_wish_we_had_a_dog.jpeg",
+        "stop_looking_at_me_like_that_nutmeg.mpeg",
+        "aww_i_cant_hate_you.png",
+        "omg_my_sneakers.avi",
+        "cat_you_are_the_worst.mp4.png.gif",
+        "giyyfgiu.mp4",
+        "rewewew.mpeg",
+        "ertrt_0oiuy.gif"
+      ];
+
+      var imageExtensions = ["jpg", "gif", "png", "jpeg"];
+      var videoExtensions = ["mov", "avi", "mp4", "mpeg", "mpg"];
+
+      var fileExt = [];
+      var images = [];
+      var videos = [];
+      var neither  = [];
+
+
+      //Overarching objective -> Sort by file extension
+
+      //1st Step: Grab string after the period
+      //2nd Step: Create array to hold file extension types
+      //3rd Step: Create an array to host "sorted" files by extension
+
+      //Pseudocode
+
+      //Create for loop iterating over length of files Array
+      //Search for the period -> return index of the period
+      //then return string of all characters of period index which will be the file extension
+      //Compare this fileExtensionString to an array of previously found file extensions
+
+      for (var i = 0; i < files.length; i++) {
+        var newString = "";
+        if (files[i].lastIndexOf(".") !== -1) {
+            newString = files[i].slice(files[i].lastIndexOf(".") + 1, files[i].length);
+            if (fileExt.indexOf(newString) === -1) {
+                fileExt.push(newString);
+                fileExt.push([]);
+            }
+            fileExt[(fileExt.indexOf(newString) + 1)].push(files[i]);
+            if (imageExtensions.indexOf(newString) !== -1) {
+                images.push(files[i]);
+            }
+            else if (videoExtensions.indexOf(newString) !== -1){
+                videos.push(files[i]);
+            }
+        }
+        else {
+            neither.push(files[i]);
+        }
+      }
+      console.log(fileExt);
+      console.log(images);
+      console.log(videos);
+      console.log(neither);
+
+
+  </script>
+</body>
+
+</html>

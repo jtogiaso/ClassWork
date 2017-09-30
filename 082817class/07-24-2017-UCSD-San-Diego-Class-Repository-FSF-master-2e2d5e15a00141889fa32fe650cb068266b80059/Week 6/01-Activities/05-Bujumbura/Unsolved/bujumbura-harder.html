@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bujumbura Data</title>
+</head>
+
+<body>
+  <!-- Retrieved data will be dumped here -->
+  <div class="city"></div>
+  <div class="wind"></div>
+  <div class="humidity"></div>
+  <div class="temp"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Things to accomplish:
+    // Get an API Key from OpenWeatherMap API
+
+      var apiKey = "e2be41f0ee28ac59d4e77165a29ec9c0";
+      var cityID = "425378";
+
+    // Create an AJAX call to retrieve data Log the data in console
+
+      var queryURL = "http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&APPID=" + apiKey;
+
+      var k2F = function (kelvinTemp) {
+        return Math.ceil(parseInt(kelvinTemp) * (9/5) - 459.67) + "°F";
+      };
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+        })
+      .done(function(response) {
+        console.log(response);
+    // Log the data in HTML
+        if (response.city.hasOwnProperty("name")) {
+          $("<h1>").html("Weather Details of City: " + response.city.name).appendTo(".city");
+        };
+        if (response.list[0].wind.hasOwnProperty("speed")) {
+          $("<div>").html("Wind Speed: " + response.list[0].wind.speed).appendTo(".wind");
+        }
+        if (response.list[0].main.hasOwnProperty("humidity")) {
+          $("<div>").html("Humidity: " + response.list[0].main.humidity).appendTo(".humidity");
+        }
+        if (response.list[0].main.hasOwnProperty("temp")) {
+          $("<div>").html("Temperature: " + k2F(response.list[0].main.temp)).appendTo(".temp");
+        }
+        else {
+          alert("defense");
+        }
+
+    // Scream Ushindi (victory in Swahili)! at the top of your lungs
+      })
+      .fail(function(){
+         $("<div>").html("Error in callback.").appendTo(".city");
+      });
+
+  </script>
+
+</body>
+
+</html>

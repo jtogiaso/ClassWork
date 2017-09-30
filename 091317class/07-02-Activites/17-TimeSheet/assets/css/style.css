@@ -1,0 +1,44 @@
+.titleDiv {
+	color: white;
+	background-color: black;
+	padding: 25px;
+}
+
+.titleText {
+	font-size: 100px;
+}
+
+.blurbText {
+	font-size: 40px;
+}
+
+
+.entryFormStyle {
+	
+}
+
+.tableOfDataStyle{
+	
+}
+.boxStyle {
+	margin: 10px auto;
+	border: solid blue 1px;
+	padding: 0 5px 5px 5px;
+}
+
+.divTitle {
+	color: white;
+	background-color: blue;
+	font-size: 20px
+}
+
+input {
+	width: 100%;
+}
+.inputDiv { 
+	padding: 10px;
+}
+
+button {
+	margin: 10px auto;
+}
