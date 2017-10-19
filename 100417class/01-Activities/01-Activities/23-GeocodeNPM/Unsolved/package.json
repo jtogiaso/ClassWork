@@ -1,0 +1,14 @@
+{
+  "name": "geocodenpm",
+  "version": "1.0.0",
+  "description": "\"Looking for weather of sepcific locations\"",
+  "main": "geocode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "geocoder": "^0.2.3"
+  }
+}
