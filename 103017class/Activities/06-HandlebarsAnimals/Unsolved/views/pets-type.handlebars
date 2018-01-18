@@ -1,0 +1,17 @@
+<style media="screen">
+  ul {
+    height : 75px;
+    width: 300px;
+    color: green;
+    background-color: aqua;
+    margin-bottom: 30px;
+  }
+</style>
+
+{{#each animals}}
+<ul>
+  <li>Animal: {{animalType}}</li>
+  <li>You can have this animal as a pet: {{pet}}</li>
+  <li>Fierceness: {{fierceness}}</li>
+</ul>
+{{/each}}

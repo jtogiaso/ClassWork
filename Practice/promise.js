@@ -1,19 +1,19 @@
 /* ES5 */
 
-let isMomHappy = false;
+let isMomHappy = true;
 
 // Promise
 let willIGetNewPhone = new Promise(
-    function (fulfilled, reject) {
+    function (fulfilledFunction, reject) {
         if (isMomHappy) {
             let phone = {
                 brand: 'Samsung',
                 color: 'black'
             };
-            fulfilled(phone); // fulfilled
+            fulfilledFunction(phone);
         } else {
             let reason = new Error('mom is not happy');
-            reject(reason); // reject
+            reject(reason);
         }
 
     }
@@ -28,9 +28,10 @@ let willIGetNewPhone = new Promise(
 let askMom = function () {
 
     willIGetNewPhone
-        .then(function (fulfilled) {
+        .then(function (passedVariable) {
             // yay, you got a new phone
-            console.log(fulfilled);
+            //function
+            console.log(passedVariable);
          // output: { brand: 'Samsung', color: 'black' }
         },function (error) {
             // oops, mom don't buy it

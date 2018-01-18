@@ -1,0 +1,26 @@
+{
+  "name": "movie_planner",
+  "version": "1.0.0",
+  "description": "Planner for Movie Watching",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "move",
+    "planning"
+  ],
+  "author": "JTUCSD0724",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.4.2",
+    "path": "^0.12.7"
+  }
+}

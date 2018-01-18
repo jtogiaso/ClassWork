@@ -1,0 +1,20 @@
+<style media="screen">
+  ul {
+    height : 75px;
+    width: 200px;
+    color: green;
+    background-color: aqua;
+    margin-bottom: 30px;
+  }
+</style>
+
+<h1>Ice Cream Menu</h1>
+
+
+{{#each ice_creams}}
+<ul>
+  <li>Flavor: {{icecream}}</li>
+  <li>Price: {{price}}</li>
+  <li>Rating: {{awesomeness}}</li>
+</ul>
+{{/each}}
